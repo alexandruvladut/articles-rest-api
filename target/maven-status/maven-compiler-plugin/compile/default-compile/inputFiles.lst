@@ -1,0 +1,16 @@
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/ArticlesApplication.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/config/JwtConfig.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/config/SecurityConfig.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/config/WebConfig.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/controller/ArticleController.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/controller/AuthController.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/model/Article.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/model/Role.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/model/User.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/repository/ArticleRepository.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/repository/UserRepository.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/security/JwtFilter.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/security/JwtUtil.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/service/ArticleService.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/service/AuthService.java
+/Users/alexvladut/MyProjects/articles-rest-api/src/main/java/com/example/articles/service/DataSeeder.java
