@@ -29,6 +29,10 @@ public class Article {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public Article(Long l, String title, String paragraph, String s) {
+    public Article(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+        this.createdAt = LocalDateTime.now();
     }
 }

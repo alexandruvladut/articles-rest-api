@@ -27,9 +27,8 @@ public class DataSeeder implements CommandLineRunner {
 
         List<Article> articles = new ArrayList<>();
 
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 1000; i++) {
             Article article = new Article(
-                    null,
                     faker.book().title(),
                     faker.lorem().paragraph(5),
                     faker.name().fullName()

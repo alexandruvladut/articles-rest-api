@@ -46,7 +46,7 @@ public class ArticleControllerTest {
     @Test
     @WithMockUser(roles = "USER")
     void createArticle_ShouldReturnCreatedArticle() throws Exception {
-        Article article = new Article(1L, "Test Title", "Test Content", "John Doe");
+        Article article = new Article("Test Title", "Test Content", "John Doe");
         when(articleService.createArticle(any(Article.class))).thenReturn(article);
 
         mockMvc.perform(post("/api/articles")
@@ -63,7 +63,7 @@ public class ArticleControllerTest {
     @Test
     @WithMockUser(roles = "USER")
     void getArticleById_ShouldReturnArticleIfExists() throws Exception {
-        Article article = new Article(1L, "Test Title", "Test Content", "John Doe");
+        Article article = new Article("Test Title", "Test Content", "John Doe");
         when(articleService.getArticleById(1L)).thenReturn(Optional.of(article));
 
         mockMvc.perform(get("/api/articles/1"))
@@ -89,8 +89,8 @@ public class ArticleControllerTest {
     @Test
     @WithMockUser(roles = "USER")
     void updateArticle_ShouldReturnUpdatedArticle() throws Exception {
-        Article existingArticle = new Article(1L, "Old Title", "Old Content", "John Doe");
-        Article updatedArticle = new Article(1L, "Updated Title", "Updated Content", "John Doe");
+        Article existingArticle = new Article("Old Title", "Old Content", "John Doe");
+        Article updatedArticle = new Article("Updated Title", "Updated Content", "John Doe");
 
         when(articleService.getArticleById(1L)).thenReturn(Optional.of(existingArticle));
         when(articleService.updateArticle(any(Article.class))).thenReturn(updatedArticle);
@@ -124,8 +124,8 @@ public class ArticleControllerTest {
     @WithMockUser(roles = "USER")
     void getArticles_ShouldReturnPagedResults() throws Exception {
         List<Article> articles = Arrays.asList(
-                new Article(1L, "Title 1", "Content 1", "Author 1"),
-                new Article(2L, "Title 2", "Content 2", "Author 2")
+                new Article("Title 1", "Content 1", "Author 1"),
+                new Article("Title 2", "Content 2", "Author 2")
         );
 
         Page<Article> page = new PageImpl<>(articles, PageRequest.of(0, 10), articles.size());
@@ -142,7 +142,7 @@ public class ArticleControllerTest {
     @WithMockUser(roles = "USER")
     void searchArticlesByTitle_ShouldReturnFilteredResults() throws Exception {
         List<Article> articles = Arrays.asList(
-                new Article(1L, "Matching Title", "Content 1", "Author 1")
+                new Article("Matching Title", "Content 1", "Author 1")
         );
 
         Page<Article> page = new PageImpl<>(articles, PageRequest.of(0, 10), articles.size());
