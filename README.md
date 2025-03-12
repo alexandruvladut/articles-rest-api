@@ -27,7 +27,7 @@ If you manually switch to a different parent and actually want the inheritance, 
 
 ### Build and Run the Docker Container
 
-docker-compose up -d
+docker-compose up -ds
 
 ### Run the Spring Boot Application
 
