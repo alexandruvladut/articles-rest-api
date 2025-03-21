@@ -1,14 +1,21 @@
-# Use OpenJDK 11 as the base image
+# Use Amazon Corretto 17 SDK as the base image
 FROM amazoncorretto:17-alpine
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the built JAR file into the container
-COPY target/articles-0.0.1-SNAPSHOT.jar /app/articles-0.0.1-SNAPSHOT.jar
+# Copy the Maven or Gradle build files (pom.xml or build.gradle) into the container
+COPY pom.xml /app/pom.xml
+COPY src /app/src
 
-# Expose the application port (change this to your app's port)
+# Install dependencies and build the application
+RUN apk add --no-cache maven
+
+# Build the application (assuming you're using Maven)
+RUN mvn clean package -DskipTests
+
+# Expose the application port
 EXPOSE 8080
 
-# Command to run the app
-ENTRYPOINT ["java", "-jar", "articles-0.0.1-SNAPSHOT.jar"]
+# Command to run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "target/articles-0.0.1-SNAPSHOT.jar"]
